@@ -1,0 +1,31 @@
+<div>
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <span>
+                <h2>TRELLO POC</h2>
+            </span>
+            <span class="spacer"></span>
+            <button mat-flat-button color="primary" (click)="addCard()">Add Card</button>
+            <button mat-flat-button color="primary" (click)="openDetails()">Details</button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</div>
+<div class="list-container" cdkDropListGroup>
+    <trello-poc-rc-item (emitItemList)="fetchItems($event)" [content]='boardContent' [cardIndex]='i'
+        *ngFor="let item of boardContent; let i = index"></trello-poc-rc-item>
+</div>
+
+<ng-template #callDialog>
+    <h1 mat-dialog-title>Add Card</h1>
+    <div mat-dialog-content>
+        <p>Do you want to add a new card?</p>
+        <mat-form-field>
+            <mat-label>Card Name</mat-label>
+            <input matInput [(ngModel)]="boardName" type="text" placeholder="Enter a new item" required>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button matDialogClose="cancel">Cancel</button>
+        <button mat-button [disabled]="!boardName" matDialogClose="add">Add</button>
+    </div>
+</ng-template>

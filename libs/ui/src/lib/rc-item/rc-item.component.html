@@ -1,0 +1,16 @@
+<div class="container">
+    <h1>{{cardName}}</h1>
+    <form [formGroup]="userForm" (ngSubmit)="onFormSubmit()">
+        <mat-form-field>
+            <input matInput formControlName="cardItem" type="text" placeholder="Enter a new item">
+        </mat-form-field>
+        <button mat-raised-button color="basic" type="submit">Add Item</button>
+    </form>
+    <div class="list" cdkDropList [cdkDropListData]="items" (cdkDropListDropped)="drop($event)">
+        <mat-card class="list-item" *ngFor="let item of items" cdkDrag>
+            <mat-card-content>
+                <p>{{item.cardItem}}</p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
