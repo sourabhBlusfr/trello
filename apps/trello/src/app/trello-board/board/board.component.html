@@ -11,7 +11,7 @@
     </mat-toolbar>
 </div>
 <div class="list-container" cdkDropListGroup>
-    <trello-poc-rc-item (emitItemList)="fetchItems($event)" [content]='boardContent' [cardIndex]='i'
+    <trello-poc-rc-item (emitItemList)="fetchItems($event)" (openDetails)="openDetails()" [content]='boardContent' [cardIndex]='i'
         *ngFor="let item of boardContent; let i = index"></trello-poc-rc-item>
 </div>
 

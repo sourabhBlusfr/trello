@@ -12,6 +12,7 @@ export class RcItemComponent implements OnInit {
   @Input() content;
   @Input() cardIndex;
   @Output() emitItemList = new EventEmitter<any>();
+  @Output() openDetails = new EventEmitter<any>();
   items: string[] = [];
   cardName: string;
 
@@ -49,5 +50,18 @@ export class RcItemComponent implements OnInit {
       this.emitItemList.emit({item: this.userForm.value, cardIndex: this.cardIndex});
       this.userForm.reset();
     }
+  }
+
+  navigateToDetails(){
+    this.openDetails.emit();
+  }
+
+  deleteItem(index){
+    this.items.splice(index, 1); 
+  }
+
+  deleteCard(){ 
+    console.log('content:', this.content)
+    this.content.splice(this.cardIndex, 1);
   }
 }

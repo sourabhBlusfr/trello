@@ -38,3 +38,9 @@
 .list-item:last-child {
     border: none;
 }
+
+.item-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }

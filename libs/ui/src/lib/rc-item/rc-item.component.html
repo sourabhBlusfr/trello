@@ -1,5 +1,10 @@
 <div class="container">
+    <div class="item-content">
     <h1>{{cardName}}</h1>
+    <button mat-mini-fab color="warn" (click)="deleteCard()">
+        <mat-icon>X</mat-icon>
+    </button>
+</div>
     <form [formGroup]="userForm" (ngSubmit)="onFormSubmit()">
         <mat-form-field>
             <input matInput formControlName="cardItem" type="text" placeholder="Enter a new item">
@@ -7,9 +12,15 @@
         <button mat-raised-button color="basic" type="submit">Add Item</button>
     </form>
     <div class="list" cdkDropList [cdkDropListData]="items" (cdkDropListDropped)="drop($event)">
-        <mat-card class="list-item" *ngFor="let item of items" cdkDrag>
+        <mat-card class="list-item" *ngFor="let item of items; let index = index;" cdkDrag
+            (click)="navigateToDetails()">
             <mat-card-content>
-                <p>{{item.cardItem}}</p>
+                <div class="item-content">
+                    <p>{{item.cardItem}}</p>
+                    <button mat-mini-fab color="warn" (click)="deleteItem(index)">
+                        <mat-icon>X</mat-icon>
+                    </button>
+                </div>
             </mat-card-content>
         </mat-card>
     </div>
