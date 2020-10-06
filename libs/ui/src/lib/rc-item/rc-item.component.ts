@@ -61,7 +61,6 @@ export class RcItemComponent implements OnInit {
   }
 
   deleteCard(){ 
-    console.log('content:', this.content)
     this.content.splice(this.cardIndex, 1);
   }
 }

@@ -6,9 +6,10 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RcItemComponent } from './rc-item/rc-item.component';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
-  imports: [CommonModule, ReactiveFormsModule, FormsModule, MatButtonModule, MatCardModule, MatInputModule, DragDropModule],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule, MatButtonModule, MatIconModule, MatCardModule, MatInputModule, DragDropModule],
   declarations: [RcItemComponent],
   exports: [RcItemComponent],
   entryComponents: [

@@ -5,6 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -20,6 +21,7 @@ describe('CardComponent', () => {
         BrowserAnimationsModule,
         MatInputModule,
         DragDropModule,
+        MatIconModule,
         ReactiveFormsModule,
         MatCardModule,
       ]
